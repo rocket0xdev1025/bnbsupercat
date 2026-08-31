@@ -9,44 +9,34 @@
   <meta property="og:description" content="Heroic feline energy, BNB power, and unstoppable meme magic." />
   <meta property="og:image" content="banner.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0B0E11" />
+  <meta name="theme-color" content="#120E0C" />
   <link rel="icon" href="logo.jpg" />
   <link rel="apple-touch-icon" href="logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Share+Tech+Mono&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            bnb: {
-              yellow: "#FCD535",
-              gold: "#F0B90B",
-              dark: "#0B0E11",
-              ink: "#181A20",
-              card: "#1E2329",
-              lift: "#2B3139",
-              line: "#2B3139",
-              muted: "#848E9C",
-              text: "#EAECEF",
-            },
-            cat: {
-              amber: "#E8A317",
-              cream: "#F3E6C8",
-              glow: "#FFB800",
-              eye: "#FFCC33",
-            },
+            fur: { DEFAULT: "#120E0C", 900: "#0C0908", 800: "#1C1612", 700: "#2A221C", 500: "#5A4A3A" },
+            cream: { DEFAULT: "#F6EBD8", 50: "#FFF8EE", 100: "#F3E6CF", 200: "#E8D5B5", 300: "#D4BC94" },
+            gold: { DEFAULT: "#F0B429", dim: "#C48412", glow: "#FFD56A" },
+            paw: "#D48978",
+            whisker: "#C9B7A0",
+            mute: "#8A7A68",
           },
           fontFamily: {
-            display: ["Orbitron", "sans-serif"],
-            body: ["Sora", "sans-serif"],
-            mono: ["Share Tech Mono", "ui-monospace", "monospace"],
+            display: ["Fraunces", "Georgia", "serif"],
+            body: ["Outfit", "system-ui", "sans-serif"],
+            mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
           },
           boxShadow: {
-            gold: "0 0 0 1px rgba(252,213,53,0.35), 0 0 40px rgba(240,185,11,0.18)",
-            "gold-lg": "0 0 0 1px rgba(252,213,53,0.5), 0 20px 80px rgba(240,185,11,0.22)",
+            cat: "0 20px 50px -20px rgba(18,14,12,0.45)",
+            gold: "0 10px 40px -12px rgba(240,180,41,0.55)",
+            ear: "0 8px 24px rgba(18,14,12,0.18)",
           },
         },
       },
@@ -54,108 +44,190 @@
   </script>
   <style>
     :root {
-      --bnb-yellow: #fcd535;
-      --bnb-gold: #f0b90b;
-      --bnb-dark: #0b0e11;
+      --fur: #120e0c;
+      --cream: #f6ebd8;
+      --gold: #f0b429;
+      --paw: #d48978;
     }
-    html, body { background: var(--bnb-dark); color: #eaecef; }
+    html, body { background: var(--cream); color: var(--fur); }
     body {
-      font-family: Sora, system-ui, sans-serif;
+      font-family: Outfit, system-ui, sans-serif;
       overflow-x: hidden;
     }
 
-    .gold-grid {
-      background-image:
-        linear-gradient(rgba(252, 213, 53, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(252, 213, 53, 0.035) 1px, transparent 1px);
-      background-size: 56px 56px;
+    .paw-cursor, .paw-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='16.2' rx='5' ry='4' fill='%23120E0C'/%3E%3Ccircle cx='5.4' cy='10.4' r='2.1' fill='%23120E0C'/%3E%3Ccircle cx='9.3' cy='6.9' r='2.1' fill='%23120E0C'/%3E%3Ccircle cx='14.7' cy='6.9' r='2.1' fill='%23120E0C'/%3E%3Ccircle cx='18.6' cy='10.4' r='2.1' fill='%23120E0C'/%3E%3C/svg%3E") 10 10, auto; }
+    a, button, .paw-pointer { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='16.2' rx='5' ry='4' fill='%23F0B429'/%3E%3Ccircle cx='5.4' cy='10.4' r='2.1' fill='%23F0B429'/%3E%3Ccircle cx='9.3' cy='6.9' r='2.1' fill='%23F0B429'/%3E%3Ccircle cx='14.7' cy='6.9' r='2.1' fill='%23F0B429'/%3E%3Ccircle cx='18.6' cy='10.4' r='2.1' fill='%23F0B429'/%3E%3C/svg%3E") 10 10, pointer; }
+
+    .paw-paper {
+      background-color: #f6ebd8;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23c48412' fill-opacity='0.06'%3E%3Cellipse cx='40' cy='48' rx='10' ry='8'/%3E%3Ccircle cx='26' cy='34' r='4.2'/%3E%3Ccircle cx='35' cy='27' r='4.2'/%3E%3Ccircle cx='46' cy='27' r='4.2'/%3E%3Ccircle cx='54' cy='34' r='4.2'/%3E%3Cellipse cx='118' cy='112' rx='10' ry='8' transform='rotate(28 118 112)'/%3E%3Ccircle cx='106' cy='98' r='4.2'/%3E%3Ccircle cx='116' cy='92' r='4.2'/%3E%3Ccircle cx='127' cy='95' r='4.2'/%3E%3Ccircle cx='133' cy='105' r='4.2'/%3E%3C/g%3E%3C/svg%3E");
     }
-    .vignette {
-      background:
-        radial-gradient(ellipse at 50% 20%, rgba(240, 185, 11, 0.12), transparent 46%),
-        radial-gradient(ellipse at 80% 80%, rgba(232, 163, 23, 0.08), transparent 40%),
-        radial-gradient(ellipse at 10% 90%, rgba(252, 213, 53, 0.06), transparent 36%);
+
+    .whisker-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c9b7a0 12%, #f0b429 50%, #c9b7a0 88%, transparent);
     }
-    .scanlines {
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 2px,
-        rgba(0, 0, 0, 0.08) 3px
-      );
-      pointer-events: none;
-    }
-    .gold-hairline {
-      background: linear-gradient(90deg, transparent, #fcd535, #f0b90b, #fcd535, transparent);
-    }
-    .title-shine {
-      background: linear-gradient(110deg, #f3e6c8 0%, #fcd535 28%, #fff6c8 42%, #f0b90b 58%, #f3e6c8 100%);
+
+    .title-gold {
+      background: linear-gradient(110deg, #7a4e08 0%, #f0b429 36%, #fff3c4 50%, #e08a14 68%, #7a4e08 100%);
       background-size: 220% auto;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: shine 6s linear infinite;
+      animation: shine 8s linear infinite;
     }
-    @keyframes shine {
-      to { background-position: 220% center; }
-    }
+    @keyframes shine { to { background-position: 220% center; } }
+
     @keyframes floaty {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-12px); }
     }
-    @keyframes pulse-ring {
-      0% { transform: scale(1); opacity: 0.7; }
-      70% { transform: scale(1.18); opacity: 0; }
-      100% { transform: scale(1.18); opacity: 0; }
+    @keyframes ear-wiggle {
+      0%, 80%, 100% { transform: rotate(var(--ear-rot)); }
+      88% { transform: rotate(calc(var(--ear-rot) - 8deg)); }
+      94% { transform: rotate(calc(var(--ear-rot) + 4deg)); }
+    }
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      96% { transform: scaleY(0.08); }
     }
     @keyframes ticker {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
-    @keyframes candle {
-      0%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(1.35); }
+    @keyframes tail {
+      0%, 100% { transform: rotate(8deg); }
+      50% { transform: rotate(-18deg); }
     }
-    @keyframes orbit {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes yarn-roll {
+      0% { transform: translateX(0) rotate(0deg); }
+      50% { transform: translateX(18px) rotate(180deg); }
+      100% { transform: translateX(0) rotate(360deg); }
     }
-    .floaty { animation: floaty 5.5s ease-in-out infinite; }
-    .pulse-ring { animation: pulse-ring 2.6s ease-out infinite; }
-    .marquee-track { animation: ticker 28s linear infinite; }
-    .coin-orbit {
-      animation: orbit 18s linear infinite;
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 0.55; }
+      50% { transform: scale(1.08); opacity: 0.2; }
     }
-    .btn-shine {
-      position: relative;
-      overflow: hidden;
+    @keyframes heart-up {
+      0% { transform: translate(-50%, 0) scale(0.6); opacity: 0; }
+      15% { opacity: 1; }
+      100% { transform: translate(calc(-50% + var(--drift)), -140px) scale(1); opacity: 0; }
     }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    .marquee-track { animation: ticker 32s linear infinite; }
+    .tail-wag { transform-origin: 12px 28px; animation: tail 2.8s ease-in-out infinite; }
+    .yarn-spin { animation: yarn-roll 6s ease-in-out infinite; }
+    .pulse-soft { animation: pulse-soft 2.8s ease-in-out infinite; }
+
+    .ear {
+      position: absolute;
+      top: -11px;
+      width: 16px;
+      height: 22px;
+      background: #1a1410;
+      border-radius: 80% 80% 30% 30% / 90% 90% 20% 20%;
+      z-index: 0;
+      animation: ear-wiggle 4.5s ease-in-out infinite;
+    }
+    .ear::after {
+      content: "";
+      position: absolute;
+      inset: 5px 3px 3px;
+      background: #d48978;
+      border-radius: inherit;
+    }
+    .ear-l { left: 3px; --ear-rot: -26deg; transform: rotate(-26deg); }
+    .ear-r { right: 3px; --ear-rot: 26deg; transform: rotate(26deg); animation-delay: 0.4s; }
+
+    .glass-cream {
+      background: rgba(255, 248, 238, 0.72);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(196, 132, 18, 0.18);
+    }
+    .glass-dark {
+      background: linear-gradient(180deg, rgba(42, 34, 28, 0.78), rgba(18, 14, 12, 0.88));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(240, 180, 41, 0.18);
+    }
+    .nav-solid {
+      background: rgba(246, 235, 216, 0.92);
+      border-bottom: 1px solid rgba(196, 132, 18, 0.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .btn-shine { position: relative; overflow: hidden; }
     .btn-shine::after {
       content: "";
       position: absolute;
       inset: 0;
       transform: translateX(-120%) skewX(-18deg);
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.38), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
       transition: transform 0.6s ease;
     }
     .btn-shine:hover::after { transform: translateX(120%) skewX(-18deg); }
-    .diamond {
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+    .card-ear {
+      position: relative;
     }
-    .glass {
-      background: linear-gradient(180deg, rgba(30, 35, 41, 0.72), rgba(11, 14, 17, 0.82));
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(252, 213, 53, 0.18);
+    .card-ear::before,
+    .card-ear::after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      width: 22px;
+      height: 18px;
+      background: inherit;
+      border: 1px solid rgba(196, 132, 18, 0.18);
+      border-bottom: 0;
+      z-index: -1;
     }
-    .nav-solid {
-      background: rgba(11, 14, 17, 0.92);
-      border-bottom: 1px solid rgba(252, 213, 53, 0.16);
-      backdrop-filter: blur(18px);
+    .card-ear::before {
+      left: 18px;
+      border-radius: 80% 40% 0 0;
+      transform: rotate(-18deg);
+      background: #fff8ee;
     }
-    .step-line {
-      background: linear-gradient(90deg, transparent, #fcd535 12%, #f0b90b 88%, transparent);
+    .card-ear::after {
+      right: 18px;
+      border-radius: 40% 80% 0 0;
+      transform: rotate(18deg);
+      background: #fff8ee;
     }
+
+    .eye {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      background: #f0b429;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+      animation: blink 5.5s infinite;
+      transform-origin: center;
+    }
+    .eye .pupil {
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      width: 9px;
+      height: 13px;
+      background: #120e0c;
+      border-radius: 50%;
+      transition: transform 80ms linear;
+    }
+    .eye .pupil::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 1px;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
     #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
     .toast {
       position: fixed;
       bottom: 1.5rem;
@@ -170,312 +242,394 @@
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
-    .ca-scroll {
-      scrollbar-width: none;
-    }
+
+    .ca-scroll { scrollbar-width: none; }
     .ca-scroll::-webkit-scrollbar { display: none; }
+
+    .heart-float {
+      position: absolute;
+      left: 50%;
+      bottom: 40%;
+      font-size: 1.2rem;
+      animation: heart-up 1.2s ease-out forwards;
+      pointer-events: none;
+    }
+
+    .step-path {
+      background-image: radial-gradient(#c48412 1.2px, transparent 1.3px);
+      background-size: 14px 6px;
+      background-repeat: repeat-x;
+      background-position: center;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .title-shine, .floaty, .pulse-ring, .marquee-track, .coin-orbit, .btn-shine::after {
+      .title-gold, .floaty, .marquee-track, .tail-wag, .yarn-spin, .pulse-soft, .ear, .eye, .btn-shine::after {
         animation: none !important;
       }
     }
   </style>
 </head>
-<body class="bg-bnb-dark text-bnb-text antialiased">
+<body class="paw-cursor paw-paper text-fur antialiased">
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="icon-paw" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="16.4" rx="5.2" ry="4.1"/>
+      <circle cx="5.3" cy="10.3" r="2.15"/>
+      <circle cx="9.2" cy="6.7" r="2.15"/>
+      <circle cx="14.8" cy="6.7" r="2.15"/>
+      <circle cx="18.7" cy="10.3" r="2.15"/>
+    </symbol>
+    <symbol id="icon-yarn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="11" cy="12" r="7.2"/>
+      <path d="M5.2 9.2c3.4 1 6.8.4 10.2-1.6M5.6 14.8c3.2-1.2 6.6-1.5 10.4-.4M8.2 5.8c1.8 3.2 2 6.8.4 10.6M14.8 6.2c-1.2 3.4-1 7 .8 10.4"/>
+      <path d="M17.2 8.2c2.4-2.2 4.6-3 5.8-2.2"/>
+    </symbol>
+    <symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M3 12s4-6 10-6 8 6 8 6-2 6-8 6-10-6-10-6z"/>
+      <path d="M3 12l4.5-3.5v7z"/>
+      <circle cx="15.5" cy="11.2" r="0.9" fill="currentColor"/>
+    </symbol>
+  </svg>
+
   <canvas id="particles"></canvas>
 
-  <!-- Binance diamond watermarks -->
-  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.07]">
-    <svg class="absolute -left-16 top-24 w-72 h-72 text-bnb-yellow" viewBox="0 0 126 126" fill="currentColor">
-      <path d="M38 53l25-25 25 25-25 25zM13 53l20-20 5 5-15 15 15 15-5 5zM88 38l5-5 20 20-20 20-5-5 15-15zM38 88l5-5 20 20-5 5zM63 108l-20-20 5-5 15 15 15-15 5 5zM38 28l5 5-5 5-5-5zM83 28l5 5-5 5-5-5z"/>
-    </svg>
-    <svg class="absolute -right-10 bottom-32 w-80 h-80 text-bnb-gold" viewBox="0 0 126 126" fill="currentColor">
-      <path d="M38 53l25-25 25 25-25 25zM13 53l20-20 5 5-15 15 15 15-5 5zM88 38l5-5 20 20-20 20-5-5 15-15zM38 88l5-5 20 20-5 5zM63 108l-20-20 5-5 15 15 15-15 5 5zM38 28l5 5-5 5-5-5zM83 28l5 5-5 5-5-5z"/>
-    </svg>
-  </div>
+  <a href="#top" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[90] focus:bg-gold focus:text-fur focus:px-3 focus:py-2 focus:rounded-full">Skip to content</a>
 
   <!-- NAV -->
   <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <div class="flex h-16 md:h-[4.5rem] items-center justify-between gap-4">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex h-[4.25rem] items-center justify-between gap-3">
         <a href="#top" class="flex items-center gap-3 min-w-0">
-          <img src="logo.jpg" alt="Binance Super Cat logo" class="h-10 w-10 rounded-full object-cover ring-2 ring-bnb-yellow shadow-gold" />
-          <div class="min-w-0">
-            <p class="font-display text-[11px] tracking-[0.28em] text-bnb-yellow leading-none">BNB CHAIN</p>
-            <p class="font-display font-bold text-sm sm:text-base tracking-wide truncate text-cat-cream">BINANCE SUPER CAT</p>
-          </div>
+          <span class="relative h-11 w-11 shrink-0">
+            <span class="ear ear-l"></span>
+            <span class="ear ear-r"></span>
+            <img src="logo.jpg" alt="Binance Super Cat logo" class="relative z-10 h-11 w-11 rounded-full object-cover ring-2 ring-gold shadow-ear" />
+          </span>
+          <span class="min-w-0">
+            <span class="block font-mono text-[10px] tracking-[0.32em] text-gold-dim uppercase leading-none">BNB Chain</span>
+            <span class="block font-display font-bold italic text-lg leading-tight truncate">Super Cat</span>
+          </span>
         </a>
 
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-bnb-muted">
-          <a href="#about" class="hover:text-bnb-yellow transition">About</a>
-          <a href="#howto" class="hover:text-bnb-yellow transition">How to Buy</a>
-          <a href="#chart" class="hover:text-bnb-yellow transition">Chart</a>
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-fur/70">
+          <a href="#about" class="hover:text-gold-dim transition">About</a>
+          <a href="#howto" class="hover:text-gold-dim transition">How to Buy</a>
+          <a href="#chart" class="hover:text-gold-dim transition">Chart</a>
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
-          <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-bnb-yellow/30 hover:border-bnb-yellow hover:shadow-gold transition" aria-label="Binance Super Cat on X">
+          <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-fur/10 bg-fur hover:ring-2 hover:ring-gold transition" aria-label="Binance Super Cat on X">
             <img src="x.png" alt="X" class="h-full w-full object-cover" />
           </a>
-          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center rounded-lg border border-bnb-yellow/40 px-3 py-2 text-xs font-semibold tracking-wide text-bnb-yellow hover:bg-bnb-yellow hover:text-bnb-ink transition">
-            CHART
+          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center rounded-full border border-fur/15 px-4 py-2 text-xs font-semibold tracking-wide hover:border-gold hover:text-gold-dim transition">
+            Chart
           </a>
-          <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center rounded-lg bg-bnb-yellow px-3 sm:px-4 py-2 text-xs sm:text-sm font-extrabold tracking-wide text-bnb-ink hover:bg-bnb-gold shadow-gold transition">
-            BUY NOW
+          <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-xs sm:text-sm font-extrabold tracking-wide text-fur shadow-gold hover:bg-gold-glow transition">
+            <svg class="h-3.5 w-3.5" fill="currentColor"><use href="#icon-paw"/></svg>
+            Buy now
           </a>
-          <button id="menuBtn" class="lg:hidden h-10 w-10 rounded-lg border border-bnb-yellow/30 text-bnb-yellow" aria-label="Open menu">
+          <button id="menuBtn" class="lg:hidden h-10 w-10 rounded-full border border-fur/15 text-fur" aria-label="Open menu" aria-expanded="false">
             <svg class="mx-auto h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
           </button>
         </div>
       </div>
     </div>
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-bnb-yellow/15 bg-bnb-dark/95 backdrop-blur-xl">
-      <div class="px-6 py-4 flex flex-col gap-3 text-sm">
-        <a href="#about" class="py-2 text-bnb-text hover:text-bnb-yellow">About</a>
-        <a href="#howto" class="py-2 text-bnb-text hover:text-bnb-yellow">How to Buy</a>
-        <a href="#chart" class="py-2 text-bnb-text hover:text-bnb-yellow">Chart</a>
-        <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="py-2 text-bnb-text hover:text-bnb-yellow">Twitter / X</a>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-fur/10 bg-cream-50/95 backdrop-blur-xl">
+      <div class="px-6 py-4 flex flex-col gap-1 text-sm">
+        <a href="#about" class="py-2.5 hover:text-gold-dim">About</a>
+        <a href="#howto" class="py-2.5 hover:text-gold-dim">How to Buy</a>
+        <a href="#chart" class="py-2.5 hover:text-gold-dim">Chart</a>
+        <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="py-2.5 hover:text-gold-dim">Twitter / X</a>
       </div>
     </div>
   </header>
 
   <main id="top" class="relative z-10">
     <!-- HERO -->
-    <section class="relative min-h-screen flex items-end md:items-center pt-16">
-      <div class="absolute inset-0">
-        <img src="banner.jpg" alt="Binance Super Cat banner" class="h-full w-full object-cover object-center" />
-        <div class="absolute inset-0 bg-gradient-to-r from-bnb-dark via-bnb-dark/80 to-bnb-dark/35"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-bnb-dark via-bnb-dark/50 to-black/30"></div>
-        <div class="absolute inset-0 gold-grid opacity-40"></div>
-        <div class="absolute inset-0 scanlines"></div>
-      </div>
-
-      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 w-full py-16 md:py-24">
-        <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
-          <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-bnb-yellow/30 bg-black/40 px-3 py-1 mb-6">
-              <span class="h-2 w-2 rounded-full bg-bnb-yellow animate-pulse"></span>
-              <span class="font-mono text-[11px] tracking-[0.22em] text-bnb-yellow">LIVE ON BNB • TICKER $BSC</span>
+    <section class="relative min-h-screen pt-[4.25rem]">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] min-h-[calc(100vh-4.25rem)]">
+        <div class="relative flex items-center px-4 sm:px-8 lg:pl-12 xl:pl-[max(2rem,calc((100vw-72rem)/2+1.5rem))] py-12 lg:py-16">
+          <div class="relative max-w-xl">
+            <div class="inline-flex items-center gap-2 rounded-full bg-fur text-cream px-3 py-1 mb-6">
+              <span class="relative flex h-2 w-2">
+                <span class="pulse-soft absolute inset-0 rounded-full bg-gold"></span>
+                <span class="relative h-2 w-2 rounded-full bg-gold"></span>
+              </span>
+              <span class="font-mono text-[10px] tracking-[0.28em] uppercase">Live on BNB · ticker $BSC</span>
             </div>
 
-            <h1 class="font-display font-black leading-[0.9] tracking-wide">
-              <span class="block text-cat-cream text-4xl sm:text-6xl md:text-7xl">BINANCE</span>
-              <span class="block title-shine text-5xl sm:text-7xl md:text-8xl mt-1">SUPER CAT</span>
+            <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-gold-dim mb-3">The heroic feline of BNB</p>
+            <h1 class="font-display leading-[0.9]">
+              <span class="block font-body font-semibold tracking-[0.35em] text-xs sm:text-sm text-fur/55 mb-2">BINANCE</span>
+              <span class="block italic font-bold text-5xl sm:text-7xl lg:text-8xl title-gold">Super Cat</span>
             </h1>
 
-            <p class="mt-6 max-w-xl text-base sm:text-lg text-cat-cream/90 leading-relaxed">
+            <div class="my-6 flex items-center gap-3 max-w-sm">
+              <span class="h-px flex-1 bg-whisker/80"></span>
+              <svg class="h-4 w-4 text-gold-dim" fill="currentColor"><use href="#icon-paw"/></svg>
+              <span class="h-px flex-1 bg-whisker/80"></span>
+            </div>
+
+            <p class="text-base sm:text-lg text-fur/75 leading-relaxed">
               Binance Super Cat brings heroic feline energy, BNB power, and unstoppable meme magic to Binance!
             </p>
 
-            <!-- CA copy -->
-            <div class="mt-8 max-w-xl">
-              <p class="mb-2 font-mono text-[11px] tracking-[0.28em] text-bnb-muted">OFFICIAL CONTRACT ADDRESS</p>
-              <div class="glass flex items-center gap-2 rounded-xl px-3 py-2.5 shadow-gold">
-                <span class="shrink-0 rounded-md bg-bnb-yellow px-2 py-1 font-display text-[10px] font-bold text-bnb-ink">CA</span>
-                <code id="caValue" class="ca-scroll flex-1 overflow-x-auto whitespace-nowrap font-mono text-xs sm:text-sm text-bnb-yellow">TBA</code>
-                <button id="copyBtn" type="button" class="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-bnb-yellow px-3 py-2 text-[11px] font-extrabold tracking-wide text-bnb-ink hover:bg-bnb-gold transition">
-                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-width="2"/></svg>
-                  COPY
+            <div class="mt-8">
+              <p class="mb-2 font-mono text-[10px] tracking-[0.28em] uppercase text-mute">Official contract · scratch to copy</p>
+              <div class="glass-cream flex items-center gap-2 rounded-2xl px-3 py-2.5 shadow-cat">
+                <span class="shrink-0 rounded-full bg-fur px-2.5 py-1 font-display italic text-[11px] font-bold text-gold">CA</span>
+                <code id="caValue" class="ca-scroll flex-1 overflow-x-auto whitespace-nowrap font-mono text-xs sm:text-sm text-fur">TBA</code>
+                <button id="copyBtn" type="button" class="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-gold px-3 py-2 text-[11px] font-extrabold tracking-wide text-fur hover:bg-gold-glow transition">
+                  <svg class="h-3.5 w-3.5" fill="currentColor"><use href="#icon-paw"/></svg>
+                  Copy
                 </button>
               </div>
             </div>
 
             <div class="mt-7 flex flex-col sm:flex-row gap-3">
-              <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center gap-2 rounded-xl bg-bnb-yellow px-7 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-ink shadow-gold-lg hover:bg-bnb-gold hover:scale-[1.02] transition">
-                BUY NOW
+              <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-extrabold tracking-wide text-fur shadow-gold hover:scale-[1.02] transition">
+                Buy $BSC
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.4" d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
-              <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-bnb-yellow/50 bg-black/30 px-7 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-yellow hover:bg-bnb-yellow hover:text-bnb-ink transition">
-                CHART
+              <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full border border-fur/20 bg-cream-50/60 px-7 py-3.5 text-sm font-bold tracking-wide hover:border-gold hover:bg-gold hover:text-fur transition">
+                View chart
               </a>
-              <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-black/40 px-5 py-3.5 text-sm font-semibold text-cat-cream hover:border-bnb-yellow/50 transition">
-                <img src="x.png" alt="" class="h-5 w-5 rounded object-cover" />
-                FOLLOW
+              <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full border border-fur/10 bg-fur px-5 py-3.5 text-sm font-semibold text-cream hover:ring-2 hover:ring-gold transition">
+                <img src="x.png" alt="" class="h-5 w-5 rounded-full object-cover" />
+                Follow
               </a>
             </div>
 
-            <div class="mt-10 grid grid-cols-3 max-w-md gap-3">
-              <div class="glass rounded-xl px-3 py-3 text-center">
-                <p class="font-mono text-[10px] tracking-widest text-bnb-muted">TICKER</p>
-                <p class="font-display font-bold text-bnb-yellow">$BSC</p>
+            <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div class="rounded-2xl bg-cream-50/80 border border-fur/10 px-3 py-3 text-center">
+                <p class="font-mono text-[10px] tracking-widest text-mute">TICKER</p>
+                <p class="font-display italic font-bold text-lg">$BSC</p>
               </div>
-              <div class="glass rounded-xl px-3 py-3 text-center">
-                <p class="font-mono text-[10px] tracking-widest text-bnb-muted">CHAIN</p>
-                <p class="font-display font-bold text-cat-cream">BNB</p>
+              <div class="rounded-2xl bg-cream-50/80 border border-fur/10 px-3 py-3 text-center">
+                <p class="font-mono text-[10px] tracking-widest text-mute">CHAIN</p>
+                <p class="font-display italic font-bold text-lg">BNB</p>
               </div>
-              <div class="glass rounded-xl px-3 py-3 text-center">
-                <p class="font-mono text-[10px] tracking-widest text-bnb-muted">STATUS</p>
-                <p class="font-display font-bold text-bnb-yellow">TBA</p>
+              <div class="rounded-2xl bg-cream-50/80 border border-fur/10 px-3 py-3 text-center">
+                <p class="font-mono text-[10px] tracking-widest text-mute">LIVES</p>
+                <p class="font-display italic font-bold text-lg">9</p>
+              </div>
+              <div class="rounded-2xl bg-cream-50/80 border border-fur/10 px-3 py-3 text-center">
+                <p class="font-mono text-[10px] tracking-widest text-mute">STATUS</p>
+                <p class="font-display italic font-bold text-lg text-gold-dim">TBA</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Logo coin -->
-          <div class="hidden md:flex justify-center lg:justify-end">
-            <div class="relative floaty">
-              <div class="absolute -inset-6 rounded-full bg-bnb-yellow/20 blur-3xl"></div>
-              <div class="pulse-ring absolute -inset-3 rounded-full border border-bnb-yellow/40"></div>
-              <svg class="coin-orbit absolute -inset-8 text-bnb-yellow/40" viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="100" r="92" stroke="currentColor" stroke-width="1" stroke-dasharray="6 10"/>
-                <circle cx="100" cy="8" r="4" fill="#FCD535"/>
-                <circle cx="100" cy="192" r="3" fill="#F0B90B"/>
-              </svg>
-              <div class="relative h-64 w-64 lg:h-80 lg:w-80 rounded-full p-1.5 bg-gradient-to-br from-bnb-yellow via-cat-amber to-bnb-gold shadow-gold-lg">
-                <img src="logo.jpg" alt="Binance Super Cat" class="h-full w-full rounded-full object-cover" />
-              </div>
-              <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-bnb-yellow/40 bg-bnb-dark/90 px-4 py-1.5 font-display text-xs tracking-[0.3em] text-bnb-yellow">
-                $BSC GUARDIAN
-              </div>
-            </div>
-          </div>
+        <div class="relative min-h-[420px] lg:min-h-full bg-[#E0A020]">
+          <img src="cat-sit.jpg" alt="Binance Super Cat sitting proudly" class="absolute inset-0 h-full w-full object-cover object-[center_20%]" />
+          <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-cream to-transparent hidden lg:block"></div>
+          <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-fur/50 to-transparent lg:hidden"></div>
+
+          <button id="petCat" type="button" class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-cream rounded-full px-4 py-2 text-xs font-semibold tracking-wide shadow-cat hover:bg-cream-50 transition whitespace-nowrap">
+            Pet the cat · <span id="petCount">0</span> purrs
+          </button>
+          <div id="hearts" class="pointer-events-none absolute inset-0 overflow-hidden"></div>
         </div>
       </div>
     </section>
 
     <!-- MARQUEE -->
-    <div class="relative z-10 border-y border-bnb-yellow/20 bg-bnb-ink overflow-hidden">
-      <div class="gold-hairline h-px w-full"></div>
-      <div class="flex marquee-track whitespace-nowrap py-3 font-display text-xs sm:text-sm tracking-[0.28em] text-bnb-yellow">
-        <span class="px-6">$BSC</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BINANCE SUPER CAT</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">HEROIC FELINE ENERGY</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BNB POWER</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">UNSTOPPABLE MEME MAGIC</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BUY THE DIP • PET THE CAT</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">$BSC</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BINANCE SUPER CAT</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">HEROIC FELINE ENERGY</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BNB POWER</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">UNSTOPPABLE MEME MAGIC</span><span class="text-bnb-muted">◆</span>
-        <span class="px-6">BUY THE DIP • PET THE CAT</span><span class="text-bnb-muted">◆</span>
+    <div class="relative z-10 bg-fur text-gold overflow-hidden">
+      <div class="whisker-rule"></div>
+      <div class="flex marquee-track whitespace-nowrap py-3.5 font-display italic text-sm sm:text-base tracking-wide">
+        <span class="px-5">$BSC</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Binance Super Cat</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Heroic feline energy</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">BNB power</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Unstoppable meme magic</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Buy the dip · pet the cat</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Nine lives. One mission.</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">$BSC</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Binance Super Cat</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Heroic feline energy</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">BNB power</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Unstoppable meme magic</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Buy the dip · pet the cat</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
+        <span class="px-5">Nine lives. One mission.</span><svg class="inline h-4 w-4 self-center text-paw" fill="currentColor"><use href="#icon-paw"/></svg>
       </div>
     </div>
 
     <!-- ABOUT -->
-    <section id="about" class="relative vignette gold-grid py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
+    <section id="about" class="relative bg-fur text-cream py-20 md:py-28 overflow-hidden">
+      <div class="absolute inset-0 opacity-30">
+        <img src="hero-cat.jpg" alt="" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-fur via-fur/90 to-fur/70"></div>
+      </div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="relative">
-            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-bnb-yellow/40 to-transparent blur-sm"></div>
-            <img src="banner.jpg" alt="Super Cat on the Binance battlefield" class="relative rounded-3xl w-full object-cover h-64 sm:h-80 lg:h-[420px] border border-bnb-yellow/30 shadow-gold-lg" />
-            <div class="absolute bottom-4 left-4 right-4 glass rounded-xl px-4 py-3 flex items-center gap-3">
-              <img src="logo.jpg" alt="" class="h-10 w-10 rounded-full object-cover ring-2 ring-bnb-yellow" />
+            <div class="absolute -inset-3 rounded-[2rem] bg-gold/20 blur-2xl"></div>
+            <img src="hero-cat.jpg" alt="Super Cat watching the city from a golden windowsill" class="relative rounded-[2rem] w-full object-cover h-64 sm:h-80 lg:h-[460px] border border-gold/25 shadow-gold" />
+            <div class="absolute bottom-4 left-4 right-4 glass-dark rounded-2xl px-4 py-3 flex items-center gap-3">
+              <span class="relative h-11 w-11 shrink-0">
+                <span class="ear ear-l"></span>
+                <span class="ear ear-r"></span>
+                <img src="logo.jpg" alt="" class="relative z-10 h-11 w-11 rounded-full object-cover ring-2 ring-gold" />
+              </span>
               <div>
-                <p class="font-display text-xs tracking-widest text-bnb-yellow">THE GUARDIAN OF GOLD CANDLES</p>
-                <p class="text-sm text-cat-cream">Nine lives. One mission. Maximum $BSC.</p>
+                <p class="font-mono text-[10px] tracking-[0.28em] uppercase text-gold">Guardian of gold candles</p>
+                <p class="text-sm text-cream/90">Nine lives. One mission. Maximum $BSC.</p>
+              </div>
+              <div class="ml-auto hidden sm:flex items-center gap-2 pr-1">
+                <span class="eye" aria-hidden="true"><span class="pupil"></span></span>
+                <span class="eye" aria-hidden="true"><span class="pupil"></span></span>
               </div>
             </div>
           </div>
 
           <div>
-            <p class="font-mono text-[11px] tracking-[0.32em] text-bnb-yellow mb-3">THE NARRATIVE</p>
-            <h2 class="font-display text-3xl sm:text-5xl font-bold text-cat-cream leading-tight">
-              Super Cat lands on <span class="text-bnb-yellow">Binance</span>
+            <p class="font-mono text-[11px] tracking-[0.32em] uppercase text-gold mb-3">The narrative</p>
+            <h2 class="font-display italic text-4xl sm:text-5xl font-bold leading-tight">
+              Super Cat lands on <span class="title-gold not-italic">Binance</span>
             </h2>
-            <p class="mt-5 text-bnb-muted leading-relaxed">
+            <p class="mt-5 text-cream/70 leading-relaxed">
               The markets sleep. Super Cat does not. Forged in amber light and tuxedo armor, Binance Super Cat is the heroic feline of BNB — a legend that treats every candle like a hunt and every dip like a launchpad.
             </p>
-            <p class="mt-4 text-bnb-muted leading-relaxed">
+            <p class="mt-4 text-cream/70 leading-relaxed">
               Binance Super Cat brings heroic feline energy, BNB power, and unstoppable meme magic to Binance. This is not a quiet cat. This is the mascot of conviction.
             </p>
 
-            <div class="mt-8 grid sm:grid-cols-3 gap-3">
-              <article class="glass rounded-2xl p-4">
-                <div class="mb-3 h-8 w-8 diamond bg-bnb-yellow"></div>
-                <h3 class="font-display text-sm text-bnb-yellow">HEROIC FELINE ENERGY</h3>
-                <p class="mt-2 text-xs text-bnb-muted leading-relaxed">Amber eyes locked on ATHs. Zero fear. Nine lives of meme pressure.</p>
-              </article>
-              <article class="glass rounded-2xl p-4">
-                <div class="mb-3 h-8 w-8 diamond bg-cat-amber"></div>
-                <h3 class="font-display text-sm text-bnb-yellow">BNB POWER</h3>
-                <p class="mt-2 text-xs text-bnb-muted leading-relaxed">Charged by the chain. Fueled by gold. Built for Binance speed.</p>
-              </article>
-              <article class="glass rounded-2xl p-4">
-                <div class="mb-3 h-8 w-8 diamond bg-cat-glow"></div>
-                <h3 class="font-display text-sm text-bnb-yellow">MEME MAGIC</h3>
-                <p class="mt-2 text-xs text-bnb-muted leading-relaxed">Once Super Cat hits the timeline, the timeline never recovers.</p>
-              </article>
+            <div class="mt-8 flex flex-wrap gap-2" aria-label="Nine lives">
+              <span class="mr-2 font-mono text-[10px] tracking-widest text-mute self-center">9 LIVES</span>
+              <span class="flex gap-1.5">
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+                <svg class="h-5 w-5 text-gold" fill="currentColor"><use href="#icon-paw"/></svg>
+              </span>
             </div>
           </div>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-3 gap-5">
+          <article class="glass-dark rounded-3xl p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-fur">
+              <svg class="h-6 w-6" fill="currentColor"><use href="#icon-paw"/></svg>
+            </div>
+            <h3 class="font-display italic text-xl text-gold">Heroic feline energy</h3>
+            <p class="mt-2 text-sm text-cream/65 leading-relaxed">Amber eyes locked on ATHs. Zero fear. Nine lives of meme pressure.</p>
+          </article>
+          <article class="glass-dark rounded-3xl p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-fur">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor"><use href="#icon-fish"/></svg>
+            </div>
+            <h3 class="font-display italic text-xl text-gold">BNB power</h3>
+            <p class="mt-2 text-sm text-cream/65 leading-relaxed">Charged by the chain. Fueled by gold. Built for Binance speed.</p>
+          </article>
+          <article class="glass-dark rounded-3xl p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-fur">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor"><use href="#icon-yarn"/></svg>
+            </div>
+            <h3 class="font-display italic text-xl text-gold">Meme magic</h3>
+            <p class="mt-2 text-sm text-cream/65 leading-relaxed">Once Super Cat hits the timeline, the timeline never recovers.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- HOW TO BUY -->
-    <section id="howto" class="relative py-20 md:py-28 border-t border-bnb-yellow/15">
-      <div class="absolute inset-0 gold-grid opacity-60"></div>
-      <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto">
-          <p class="font-mono text-[11px] tracking-[0.32em] text-bnb-yellow mb-3">GET IN THE SQUAD</p>
-          <h2 class="font-display text-3xl sm:text-5xl font-bold text-cat-cream">How to Buy <span class="text-bnb-yellow">$BSC</span></h2>
-          <p class="mt-4 text-bnb-muted">Four steps. BNB fuel. Super Cat speed. Grab $BSC on Flap with BNB on BNB Chain.</p>
-        </div>
-
-        <div class="relative mt-14">
-          <div class="hidden lg:block absolute top-10 left-[8%] right-[8%] h-px step-line"></div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <article class="glass rounded-2xl p-6 hover:shadow-gold transition relative">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-bnb-yellow font-display text-lg font-black text-bnb-ink shadow-gold">01</div>
-              <h3 class="font-display text-lg text-cat-cream">Create a Wallet</h3>
-              <p class="mt-3 text-sm text-bnb-muted leading-relaxed">Download MetaMask, Trust Wallet, or Binance Wallet. Enable BNB Smart Chain so Super Cat can land in your bag.</p>
-            </article>
-            <article class="glass rounded-2xl p-6 hover:shadow-gold transition relative">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-bnb-yellow font-display text-lg font-black text-bnb-ink shadow-gold">02</div>
-              <h3 class="font-display text-lg text-cat-cream">Get BNB</h3>
-              <p class="mt-3 text-sm text-bnb-muted leading-relaxed">Buy BNB on Binance and send it to your wallet. $BSC runs on BNB power — Super Cat does not fly on empty tanks.</p>
-            </article>
-            <article class="glass rounded-2xl p-6 hover:shadow-gold transition relative">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-bnb-yellow font-display text-lg font-black text-bnb-ink shadow-gold">03</div>
-              <h3 class="font-display text-lg text-cat-cream">Open Flap.sh</h3>
-              <p class="mt-3 text-sm text-bnb-muted leading-relaxed">Hit Buy Now, connect your wallet, and paste the official $BSC contract. Always copy CA from this site.</p>
-            </article>
-            <article class="glass rounded-2xl p-6 hover:shadow-gold transition relative">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-bnb-yellow font-display text-lg font-black text-bnb-ink shadow-gold">04</div>
-              <h3 class="font-display text-lg text-cat-cream">Swap for $BSC</h3>
-              <p class="mt-3 text-sm text-bnb-muted leading-relaxed">Swap BNB for $BSC, confirm the tx, and hold like a hero. You are now part of the Super Cat squad.</p>
-            </article>
+    <section id="howto" class="relative paw-paper py-20 md:py-28">
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+          <div class="relative order-2 lg:order-1">
+            <div class="absolute -left-6 -top-6 h-16 w-16 yarn-spin text-gold-dim hidden sm:block" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="h-16 w-16" fill="none" stroke="currentColor" stroke-width="1.4"><use href="#icon-yarn"/></svg>
+            </div>
+            <img src="cat-loaf.jpg" alt="Super Cat loafing, waiting for you to buy" class="rounded-[2rem] w-full object-cover shadow-cat border border-gold/20" />
+            <p class="mt-4 text-center font-display italic text-mute">The loaf of legend. Waiting for your bag.</p>
           </div>
-        </div>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center rounded-xl bg-bnb-yellow px-8 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-ink shadow-gold hover:bg-bnb-gold transition">
-            BUY NOW ON FLAP
-          </a>
-          <button type="button" id="copyBtn2" class="inline-flex items-center justify-center rounded-xl border border-bnb-yellow/40 px-8 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-yellow hover:bg-bnb-yellow hover:text-bnb-ink transition">
-            COPY CA
-          </button>
+          <div class="order-1 lg:order-2">
+            <p class="font-mono text-[11px] tracking-[0.32em] uppercase text-gold-dim mb-3">Get in the litter</p>
+            <h2 class="font-display italic text-4xl sm:text-5xl font-bold">How to buy <span class="not-italic text-gold-dim">$BSC</span></h2>
+            <p class="mt-4 text-fur/65">Four steps. BNB fuel. Super Cat speed. Grab $BSC on Flap with BNB on BNB Chain.</p>
+
+            <ol class="mt-8 space-y-4">
+              <li class="flex gap-4 rounded-2xl bg-cream-50/80 border border-fur/10 p-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-fur text-gold font-display italic font-bold text-lg shadow-cat">1</span>
+                <div>
+                  <h3 class="font-display italic text-lg">Create a wallet</h3>
+                  <p class="mt-1 text-sm text-fur/65 leading-relaxed">Download MetaMask, Trust Wallet, or Binance Wallet. Enable BNB Smart Chain so Super Cat can land in your bag.</p>
+                </div>
+              </li>
+              <li class="flex gap-4 rounded-2xl bg-cream-50/80 border border-fur/10 p-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-fur text-gold font-display italic font-bold text-lg shadow-cat">2</span>
+                <div>
+                  <h3 class="font-display italic text-lg">Get BNB</h3>
+                  <p class="mt-1 text-sm text-fur/65 leading-relaxed">Buy BNB on Binance and send it to your wallet. $BSC runs on BNB power — Super Cat does not fly on empty tanks.</p>
+                </div>
+              </li>
+              <li class="flex gap-4 rounded-2xl bg-cream-50/80 border border-fur/10 p-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-fur text-gold font-display italic font-bold text-lg shadow-cat">3</span>
+                <div>
+                  <h3 class="font-display italic text-lg">Open Flap.sh</h3>
+                  <p class="mt-1 text-sm text-fur/65 leading-relaxed">Hit Buy Now, connect your wallet, and paste the official $BSC contract. Always copy CA from this site.</p>
+                </div>
+              </li>
+              <li class="flex gap-4 rounded-2xl bg-cream-50/80 border border-fur/10 p-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold text-fur font-display italic font-bold text-lg shadow-gold">4</span>
+                <div>
+                  <h3 class="font-display italic text-lg">Swap for $BSC</h3>
+                  <p class="mt-1 text-sm text-fur/65 leading-relaxed">Swap BNB for $BSC, confirm the tx, and hold like a hero. You are now part of the Super Cat squad.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-extrabold tracking-wide text-fur shadow-gold hover:bg-gold-glow transition">
+                Buy now on Flap
+              </a>
+              <button type="button" id="copyBtn2" class="inline-flex items-center justify-center gap-2 rounded-full border border-fur/20 px-8 py-3.5 text-sm font-bold tracking-wide hover:bg-fur hover:text-cream transition">
+                <svg class="h-4 w-4" fill="currentColor"><use href="#icon-paw"/></svg>
+                Copy CA
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CHART -->
-    <section id="chart" class="relative py-20 md:py-28 border-t border-bnb-yellow/15">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="chart" class="relative bg-fur text-cream py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
-            <p class="font-mono text-[11px] tracking-[0.32em] text-bnb-yellow mb-3">LIVE TERMINAL</p>
-            <h2 class="font-display text-3xl sm:text-5xl font-bold text-cat-cream">$BSC Chart</h2>
-            <p class="mt-3 text-bnb-muted">Watch Super Cat hunt candles in real time on Dexscreener.</p>
+            <p class="font-mono text-[11px] tracking-[0.32em] uppercase text-gold mb-3">Live litter box</p>
+            <h2 class="font-display italic text-4xl sm:text-5xl font-bold">$BSC Chart</h2>
+            <p class="mt-3 text-cream/60">Watch Super Cat hunt candles in real time on Dexscreener.</p>
           </div>
-          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl border border-bnb-yellow/40 px-5 py-2.5 text-xs font-extrabold tracking-[0.18em] text-bnb-yellow hover:bg-bnb-yellow hover:text-bnb-ink transition">
-            OPEN CHART
+          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-gold/40 px-5 py-2.5 text-xs font-extrabold tracking-wide text-gold hover:bg-gold hover:text-fur transition">
+            Open chart
           </a>
         </div>
 
-        <div class="relative rounded-2xl p-[1px] bg-gradient-to-br from-bnb-yellow via-cat-amber to-transparent shadow-gold-lg">
-          <div class="rounded-2xl overflow-hidden bg-bnb-card">
-            <div class="flex items-center justify-between px-4 py-3 border-b border-bnb-yellow/15 bg-bnb-ink/80">
+        <div class="relative rounded-[1.6rem] p-[1px] bg-gradient-to-br from-gold via-paw to-transparent shadow-gold">
+          <div class="rounded-[1.55rem] overflow-hidden bg-fur-800">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-gold/15 bg-fur/80">
               <div class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#f6465d]"></span>
-                <span class="h-2.5 w-2.5 rounded-full bg-bnb-yellow"></span>
-                <span class="h-2.5 w-2.5 rounded-full bg-[#0ecb81]"></span>
-                <span class="ml-2 font-mono text-[11px] tracking-widest text-bnb-muted">DEXSCREENER // $BSC</span>
+                <span class="relative h-8 w-8">
+                  <span class="ear ear-l" style="top:-6px;width:11px;height:14px"></span>
+                  <span class="ear ear-r" style="top:-6px;width:11px;height:14px"></span>
+                  <span class="relative z-10 block h-8 w-8 rounded-full bg-fur-700 border border-gold/30"></span>
+                </span>
+                <span class="font-mono text-[11px] tracking-widest text-mute">DEXSCREENER // $BSC</span>
               </div>
-              <span class="font-mono text-[11px] text-bnb-yellow">THEME: BINANCE GOLD</span>
+              <span class="font-mono text-[11px] text-gold">Theme: tuxedo gold</span>
             </div>
             <iframe
               title="Dexscreener $BSC chart"
               src="https://dexscreener.com/robinhood/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
-              class="w-full h-[420px] sm:h-[560px] lg:h-[640px] bg-bnb-dark"
+              class="w-full h-[420px] sm:h-[560px] lg:h-[640px] bg-fur"
               style="border:0"
               loading="lazy"
               allow="clipboard-write"
@@ -486,17 +640,21 @@
     </section>
 
     <!-- CTA -->
-    <section class="relative py-20 overflow-hidden border-t border-bnb-yellow/15">
-      <img src="banner.jpg" alt="" class="absolute inset-0 h-full w-full object-cover opacity-30" />
-      <div class="absolute inset-0 bg-gradient-to-r from-bnb-dark via-bnb-dark/80 to-bnb-dark/70"></div>
-      <div class="relative mx-auto max-w-4xl px-4 text-center">
-        <img src="logo.jpg" alt="" class="mx-auto h-20 w-20 rounded-full object-cover ring-4 ring-bnb-yellow shadow-gold-lg mb-6" />
-        <h2 class="font-display text-3xl sm:text-5xl font-bold text-cat-cream">Join the Super Cat squad</h2>
-        <p class="mt-4 text-bnb-muted max-w-xl mx-auto">Follow the hunt. Copy the CA. Buy $BSC. Binance Super Cat is coming for the timeline.</p>
+    <section class="relative py-24 overflow-hidden">
+      <img src="banner.jpg" alt="" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-fur/80 via-fur/70 to-fur/85"></div>
+      <div class="relative mx-auto max-w-3xl px-4 text-center text-cream">
+        <span class="relative inline-block h-24 w-24 mb-6">
+          <span class="ear ear-l" style="top:-14px;width:22px;height:28px;left:6px"></span>
+          <span class="ear ear-r" style="top:-14px;width:22px;height:28px;right:6px"></span>
+          <img src="logo.jpg" alt="" class="relative z-10 h-24 w-24 rounded-full object-cover ring-4 ring-gold shadow-gold" />
+        </span>
+        <h2 class="font-display italic text-4xl sm:text-5xl font-bold">Join the Super Cat squad</h2>
+        <p class="mt-4 text-cream/70 max-w-xl mx-auto">Follow the hunt. Copy the CA. Buy $BSC. Binance Super Cat is coming for the timeline.</p>
         <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-          <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center rounded-xl bg-bnb-yellow px-8 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-ink shadow-gold-lg hover:bg-bnb-gold transition">BUY NOW</a>
-          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl border border-bnb-yellow/50 px-8 py-3.5 text-sm font-extrabold tracking-[0.18em] text-bnb-yellow hover:bg-bnb-yellow hover:text-bnb-ink transition">CHART</a>
-          <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-black/40 px-6 py-3.5 text-sm font-semibold text-cat-cream hover:border-bnb-yellow/50 transition">
+          <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-extrabold tracking-wide text-fur shadow-gold hover:bg-gold-glow transition">Buy now</a>
+          <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-gold/50 px-8 py-3.5 text-sm font-extrabold tracking-wide text-gold hover:bg-gold hover:text-fur transition">Chart</a>
+          <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-black/40 px-6 py-3.5 text-sm font-semibold text-cream hover:border-gold/50 transition">
             <img src="x.png" alt="" class="h-5 w-5 rounded object-cover" />
             @bnbsupercat
           </a>
@@ -505,27 +663,43 @@
     </section>
   </main>
 
-  <footer class="relative z-10 border-t border-bnb-yellow/15 bg-bnb-ink">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+  <footer class="relative z-10 bg-cream-50 border-t border-fur/10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div class="flex items-center gap-3">
-        <img src="logo.jpg" alt="Binance Super Cat" class="h-11 w-11 rounded-full object-cover ring-2 ring-bnb-yellow" />
+        <span class="relative h-12 w-12">
+          <span class="ear ear-l"></span>
+          <span class="ear ear-r"></span>
+          <img src="logo.jpg" alt="Binance Super Cat" class="relative z-10 h-12 w-12 rounded-full object-cover ring-2 ring-gold" />
+        </span>
         <div>
-          <p class="font-display font-bold text-cat-cream">BINANCE SUPER CAT</p>
-          <p class="font-mono text-xs text-bnb-yellow">$BSC • BNB CHAIN</p>
+          <p class="font-display italic font-bold text-lg leading-tight">Binance Super Cat</p>
+          <p class="font-mono text-xs text-gold-dim">$BSC · BNB Chain</p>
         </div>
       </div>
-      <p class="text-xs text-bnb-muted max-w-xl leading-relaxed">
+      <p class="text-xs text-mute max-w-xl leading-relaxed">
         Binance Super Cat ($BSC) is a community meme token. Not affiliated with Binance.com or Binance Holdings. Crypto is volatile. Always verify the official CA before buying. DYOR. NFA.
       </p>
-      <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="h-11 w-11 overflow-hidden rounded-lg border border-bnb-yellow/30 hover:border-bnb-yellow transition" aria-label="X">
-        <img src="x.png" alt="X" class="h-full w-full object-cover" />
-      </a>
+      <div class="flex items-center gap-3">
+        <svg class="h-10 w-10 text-fur tail-wag" viewBox="0 0 32 40" fill="currentColor" aria-hidden="true">
+          <path d="M18 38c-8-2-12-10-8-18 3-6 10-8 10-14 6 6 2 12-1 16-3 4 0 10 6 12-4 3-7 4-7 4z"/>
+        </svg>
+        <a href="https://x.com/bnbsupercat" target="_blank" rel="noopener noreferrer" class="h-11 w-11 overflow-hidden rounded-full border border-fur/15 hover:ring-2 hover:ring-gold transition" aria-label="X">
+          <img src="x.png" alt="X" class="h-full w-full object-cover" />
+        </a>
+      </div>
     </div>
-    <div class="gold-hairline h-px"></div>
-    <p class="py-4 text-center font-mono text-[11px] tracking-widest text-bnb-muted">© 2026 BINANCE SUPER CAT • ALL MEMES RESERVED</p>
+    <div class="whisker-rule"></div>
+    <p class="py-4 text-center font-mono text-[11px] tracking-widest text-mute">© 2026 Binance Super Cat · all memes reserved · purr responsibly</p>
   </footer>
 
-  <div id="toast" class="toast glass rounded-full px-5 py-2.5 font-display text-xs tracking-widest text-bnb-yellow shadow-gold">CA COPIED</div>
+  <div class="lg:hidden fixed bottom-4 inset-x-4 z-50">
+    <a href="https://flap.sh/bnb/TBA" target="_blank" rel="noopener noreferrer" class="btn-shine flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3.5 text-sm font-extrabold tracking-wide text-fur shadow-gold">
+      <svg class="h-4 w-4" fill="currentColor"><use href="#icon-paw"/></svg>
+      Buy $BSC now
+    </a>
+  </div>
+
+  <div id="toast" class="toast glass-cream rounded-full px-5 py-2.5 font-display italic text-sm text-fur shadow-cat">Purrfect — CA copied</div>
 
   <script>
     const CA = "TBA";
@@ -542,8 +716,14 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => mobileMenu.classList.add("hidden")));
+    menuBtn.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("hidden") === false;
+      menuBtn.setAttribute("aria-expanded", String(open));
+    });
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }));
 
     async function copyCA() {
       try {
@@ -562,37 +742,84 @@
     document.getElementById("copyBtn").addEventListener("click", copyCA);
     document.getElementById("copyBtn2").addEventListener("click", copyCA);
 
-    // Gold dust
+    const petBtn = document.getElementById("petCat");
+    const petCount = document.getElementById("petCount");
+    const hearts = document.getElementById("hearts");
+    let purrs = 0;
+    petBtn.addEventListener("click", () => {
+      purrs += 1;
+      petCount.textContent = String(purrs);
+      const h = document.createElement("span");
+      h.className = "heart-float";
+      h.style.setProperty("--drift", (Math.random() * 80 - 40) + "px");
+      h.textContent = ["♥", "🐾", "✨"][purrs % 3];
+      hearts.appendChild(h);
+      setTimeout(() => h.remove(), 1200);
+    });
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reduceMotion) {
+      document.addEventListener("mousemove", (e) => {
+        document.querySelectorAll(".pupil").forEach((p) => {
+          const eye = p.parentElement.getBoundingClientRect();
+          const cx = eye.left + eye.width / 2;
+          const cy = eye.top + eye.height / 2;
+          const dx = Math.max(-3.5, Math.min(3.5, (e.clientX - cx) / 28));
+          const dy = Math.max(-3.5, Math.min(3.5, (e.clientY - cy) / 28));
+          p.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+      });
+    }
+
     const canvas = document.getElementById("particles");
     const ctx = canvas.getContext("2d");
     let w, h, dots;
+    function drawPaw(x, y, s, a, rot) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.fillStyle = `rgba(196, 132, 18, ${a})`;
+      ctx.beginPath();
+      ctx.ellipse(0, s * 0.32, s * 0.42, s * 0.32, 0, 0, Math.PI * 2);
+      ctx.fill();
+      const toes = [[-0.55, -0.12], [-0.2, -0.48], [0.2, -0.48], [0.55, -0.12]];
+      for (const [tx, ty] of toes) {
+        ctx.beginPath();
+        ctx.arc(tx * s, ty * s, s * 0.16, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
     function resize() {
       w = canvas.width = innerWidth;
       h = canvas.height = innerHeight;
-      dots = Array.from({ length: Math.min(70, Math.floor(w / 24)) }, () => ({
+      dots = Array.from({ length: Math.min(28, Math.floor(w / 70)) }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random() * 1.6 + 0.3,
-        v: Math.random() * 0.35 + 0.08,
-        a: Math.random() * 0.45 + 0.12,
+        s: Math.random() * 8 + 6,
+        v: Math.random() * 0.28 + 0.08,
+        a: Math.random() * 0.18 + 0.05,
+        r: Math.random() * Math.PI,
+        rv: (Math.random() - 0.5) * 0.004,
       }));
     }
     function tick() {
       ctx.clearRect(0, 0, w, h);
       for (const d of dots) {
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(252, 213, 53, ${d.a})`;
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fill();
+        drawPaw(d.x, d.y, d.s, d.a, d.r);
         d.y -= d.v;
-        d.x += Math.sin(d.y * 0.01) * 0.2;
-        if (d.y < -4) { d.y = h + 4; d.x = Math.random() * w; }
+        d.x += Math.sin(d.y * 0.01) * 0.15;
+        d.r += d.rv;
+        if (d.y < -20) { d.y = h + 20; d.x = Math.random() * w; }
       }
       requestAnimationFrame(tick);
     }
-    resize();
-    addEventListener("resize", resize);
-    tick();
+    if (!reduceMotion) {
+      resize();
+      addEventListener("resize", resize);
+      tick();
+    }
   </script>
 </body>
 </html>
